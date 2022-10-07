@@ -1,0 +1,28 @@
+{
+  "name": "oauth-sds",
+  "version": "1.0.0",
+  "description": "Trabajo final de desarrollo de software",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MMariatti/OAuth-sds.git"
+  },
+  "keywords": [
+    "oauth",
+    "seguridad",
+    "desarrollo",
+    "software"
+  ],
+  "author": "Nehuen Olivera Marcos Mariatti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MMariatti/OAuth-sds/issues"
+  },
+  "homepage": "https://github.com/MMariatti/OAuth-sds#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
