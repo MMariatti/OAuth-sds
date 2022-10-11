@@ -2,9 +2,10 @@
   "name": "oauth-sds",
   "version": "1.0.0",
   "description": "Trabajo final de desarrollo de software",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
