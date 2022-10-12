@@ -22,6 +22,11 @@ app.use("/auth", authRoutes);
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => console.log("Database Connected"))
 .catch((err) => console.log(err));
 
+mongoose.Promise = global.Promise;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 // Constants
 const PORT = process.env.PORT
