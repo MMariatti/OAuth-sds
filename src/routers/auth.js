@@ -1,3 +1,4 @@
+const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
@@ -15,7 +16,8 @@ router.get(
   passport.authenticate("google"),
   (req, res, next) => {
     user = req.user;
-    res.send(user);
+    body = { "Nombre": user.name, "Email": user.email};
+    res.status(200).send(body);
   }
 );
 module.exports = router;
