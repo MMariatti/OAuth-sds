@@ -10,7 +10,7 @@ const app = express();
 
 //configuramos la session
 app.use(session({
-  secret: 'demo',
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
 }));
