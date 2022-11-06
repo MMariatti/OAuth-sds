@@ -9,13 +9,11 @@ const session = require("express-session");
 const app = express();
 
 //configuramos la session
-app.use(
-  session({
-    secret: "demo",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+app.use(session({
+  secret: "demo",
+  resave: false,
+  saveUninitialized: true,
+}));
 
 /* Importamos la ruta a oauth y lo necesario para autenticar con passport */
 const passportSetup = require("./config/passport-setup");

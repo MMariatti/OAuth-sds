@@ -54,6 +54,8 @@ Facebook, Twitter, Google, incluso GitHub.
 En este ejemplo vamos a utilizar el protocolo OAuth para el iniciar sesión en nuestro sitio web a traves
 de Google.
 
+![Proceso de autorizacion OAuth](https://miro.medium.com/max/640/1*CDWi2lZNnmE0Wu7s4v0CWA.jpeg)
+
 ## Qué es Passport? ##
 Es un middleware de autenticación para Node.js que maneja diferentes estrategias de autenticación.
 En este ejemplo vamos a utilizar el paquete passport-google-oauth20 para manejar la autenticación.
@@ -70,6 +72,20 @@ y luego utilizar esos modelos para interactuar con la base de datos.
 En nuestro ejemplo vamos a utilizar Mongoose para definir un modelo de usuario.
 Este modelo solo va a contener los datos que nos proporciona google, como el nombre, el email y el 
 googleId. El googleId es un identificador unico que nos proporciona google para cada usuario.
+
+## Explicación del código ##
+### Configuración del sitio en google developers ###
+ Lo primero que debemos hacer es ir a la [consola de desarrolladores de Google](http://console.developers.google.com) y crear un proyecto.
+ Una vez en el dashboard  vamos a 'seleccionar proyecto' y luego a 'nuevo proyecto'. Agregamos un nombre a nuestro proyecto y lo creamos.
+ Luego hacemos click en 'Habilitar API y servicios' y buscamos 'Google+ API' y la habilitamos.
+ Una vez habilitada la API vamos a 'Credenciales' y creamos una nueva credencial. 
+ Vamos a ser redirigidos a una pantalla donde debemos hacer click en 'Configurar pantalla de consentimiento'.
+ Si deseamos que todos los usuarios de google puedan iniciar sesión en nuestro sitio web debemos seleccionar la opción 'externo'.
+ Luego de guardar, nos dirigimos a 'Credenciales' y seleccionamos "Crear credenciales" y luego "ID de cliente OAuth".
+ Se va a abrir un un form en el que debemos elegir el tipo de aplicación(En este caso web) y el nombre de la aplicación. Tambien en este mismo form nos pedira la URI del sitio, en este caso http://localhost:3000 y la de redireccionamiento http://localhost:3000/auth/google/redirect.
+ Luego de guardar, nos va a abrir un modal en el que nos va a mostrar nuestro client_id y client_secret. Estos datos los vamos a utilizar en nuestro código. Es muy importante que estos datos los guardemos de manera que no sean accesibles al todo el mundo. En este ejemplo vamos a utilizar el paquete dotenv para guardar estas variables de entorno en un archivo .env.
+ 
+
 
 ## Problemas a los que nos enfrentamos ##
 - Ninguno de los 2 teniamos experiencia usando Node y MongoDB por lo que primero realizamos los cursos gratis
