@@ -1,83 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SDS - OAuth</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <src rel="stylesheet" href="public/css/index.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/A.style.css.pagespeed.cf.AxmTFBrhes.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-    <title>SDS</title>
 </head>
-<script>
-    function login_google() {
-        window.location.href = "http://localhost:3000/auth/google";
-    }
-</script>
-<style>
-    .loginBtn {
-        box-sizing: border-box;
-        position: relative;
-        /* width: 13em;  - apply for fixed size */
-        margin: 0.2em;
-        padding: 0 15px 0 46px;
-        border: none;
-        text-align: left;
-        line-height: 34px;
-        white-space: nowrap;
-        border-radius: 0.2em;
-        font-size: 16px;
-        color: #FFF;
-    }
 
-    .loginBtn:before {
-        content: "";
-        box-sizing: border-box;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 34px;
-        height: 100%;
-    }
+<body class="bg-secondary">
+    <script>
+        function login_google() {
+            window.location.href = "http://localhost:3000/auth/google";
+        }
+    </script>
 
-    .loginBtn:focus {
-        outline: none;
-    }
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
-    .loginBtn:active {
-        box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
-    }
+        .google-btn {
+            width: 184px;
+            height: 42px;
+            background-color: #4285f4;
+            border-radius: 2px;
+            box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+        }
 
+        .google-btn .google-icon-wrapper {
+            position: absolute;
+            margin-top: 1px;
+            margin-left: 1px;
+            width: 40px;
+            height: 40px;
+            border-radius: 2px;
+            background-color: #fff;
+        }
 
-    /* Google */
-    .loginBtn--google {
-        /*font-family: "Roboto", Roboto, arial, sans-serif;*/
-        background: #DD4B39;
-    }
+        .google-btn .google-icon {
+            position: absolute;
+            margin-top: 11px;
+            margin-left: 11px;
+            width: 18px;
+            height: 18px;
+        }
 
-    .loginBtn--google:before {
-        border-right: #BB3F30 1px solid;
-        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
-    }
+        .google-btn .btn-text {
+            float: right;
+            margin: 11px 11px 0 0;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            font-family: "Roboto";
+        }
 
-    .loginBtn--google:hover,
-    .loginBtn--google:focus {
-        background: #E74B37;
-    }
-</style>
-<h1>Seguridad en el desarrollo de Software</h1>
+        .google-btn:hover {
+            box-shadow: 0 0 6px #4285f4;
+        }
 
-<body>
-    <h2>Bienvenidos al foro!</h2>
-    <p>Aquí podrás plantear tus dudas.</p>
-    <p>Los profesores y tus compañeros te ayudarán a despejarlas</p>
-    <br>
-    <p>Para mayor seguridad, por favor inicia sesion con tu cuenta de google</p>
-    <button class="loginBtn loginBtn--google" onclick="login_google()">Login con Google</button>
-
-    
+        .google-btn:active {
+            background: #1669f2;
+        }
+    </style>
 
 
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center mb-3">
+                <h2 class="heading-section">Seguridad en el desarrollo de Software</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-7 bg-white rounded-2">
+                <div class="wrap">
+                    <div class="text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2OEOUaABjLYvcKQafnxHZwY50cDvnTCiJIw&usqp=CAU"
+                            class="img-fluid" alt="">
+                    </div>
+                    <div class="p-4 p-md-5">
+                        <div>
+                            <div class="text-center">
+                                <h3 class="mb-4">Bienvenidos al foro!</h3>
+                            </div>
+                            <div class="text-center">
+                                <p>El siguiente sitio es un ejemplo de como implementar OAuth para un inicio de sesion.
+                                </p>
+                                <p>Al final del procedimiento vamos a mostrar los datos que Google nos devuelve de la
+                                    persona logueada.</p>
+                                <hr>
+                                <p>Por favor inicia sesion con tu cuenta de google</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn"></button>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="google-btn" onclick="login_google()">
+                                <div class="google-icon-wrapper">
+                                    <img class="google-icon"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                                </div>
+                                <p class="btn-text"><b>Login con Google</b></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js+bootstrap.min.js+main.js.pagespeed.jc.3YxqA_kpjO.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+        integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+        data-cf-beacon='{"rayId":"765dac6a8bc2ba79","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.0","si":100}'
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
