@@ -84,7 +84,37 @@ googleId. El googleId es un identificador unico que nos proporciona google para 
  Luego de guardar, nos dirigimos a 'Credenciales' y seleccionamos "Crear credenciales" y luego "ID de cliente OAuth".
  Se va a abrir un un form en el que debemos elegir el tipo de aplicación(En este caso web) y el nombre de la aplicación. Tambien en este mismo form nos pedira la URI del sitio, en este caso http://localhost:3000 y la de redireccionamiento http://localhost:3000/auth/google/redirect.
  Luego de guardar, nos va a abrir un modal en el que nos va a mostrar nuestro client_id y client_secret. Estos datos los vamos a utilizar en nuestro código. Es muy importante que estos datos los guardemos de manera que no sean accesibles al todo el mundo. En este ejemplo vamos a utilizar el paquete dotenv para guardar estas variables de entorno en un archivo .env.
- 
+
+### Configuración de passport ###
+En el archivo passport-setup.js vamos a configurar passport para que utilice la estrategia de Google.
+Lo primero que debemos hacer es importar el paquete passport y el paquete passport-google-oauth20.
+Luego debemos importar el modelo de usuario que definimos en el archivo user.js.
+Luego debemos configurar passport para que utilice la estrategia de Google. Para esto debemos crear una nueva instancia de GoogleStrategy y pasarle un objeto de configuración. En este objeto debemos pasarle el clientID y el clientSecret que nos proporciona google. Tambien debemos pasarle la URI de redireccionamiento. Luego debemos pasarle una función que se va a ejecutar cuando el usuario se autentique. Esta función va a recibir el accessToken, el refreshToken y el profile. El accessToken es un token que nos proporciona google para que podamos acceder a los datos del usuario. El refreshToken es un token que nos proporciona google para que podamos renovar el accessToken. El profile es un objeto que contiene los datos del usuario. En este ejemplo vamos a guardar el nombre, el email y el googleId en la base de datos. Luego de guardar el usuario en la base de datos, debemos llamar a la función done() para que passport sepa que el proceso de autenticación terminó.
+Las funciones SerializeUser y DeserializeUser son funciones que se ejecutan cuando el usuario se autentica. SerializeUser se ejecuta cuando el usuario se autentica y se encarga de guardar el usuario en la sesión. DeserializeUser se ejecuta cuando el usuario hace una petición a la aplicación y se encarga de obtener el usuario de la sesión y guardarlo en la variable req.user.
+Lo que hacemos en la base de datos a nivel de codigo, es preguntar si el usuario ya existe en la base de datos. Si existe, lo devolvemos. Si no existe, lo creamos y lo devolvemos.
+
+### Configuracion de router ###
+En el archivo auth.js ubicado en la carpeta routers vamos a configurar las rutas de autenticación.
+Lo primero que debemos hacer es importar el paquete express y el paquete passport. 
+El scope que definimos va a traer los datos del usuario que necesitamos para autenticarlo. En este caso el nombre, el email y el id de google.
+Nos va a redirigir automaticamente a auth/google/redirect que es la ruta que definimos en el archivo passport-setup.js.
+
+### Configuracion de server.js ###
+En este archivo vamos a importar los modulos necesarios para que neustra aplicacion funcione.
+Estos paquetes son todos los definidos en la sección de paquetes de este readme.
+Aqui vamos a establecer las rutas de nuestra aplicación. En este caso solo tenemos una ruta que es la de autenticación y el index.
+En este archivo definimos el manejo de sesion, la conexion a la base de datos y el puerto en el que va a correr nuestra aplicación.Tambien definimos el middleware de passport y el middleware de express-session y el manejo de errores en caso que se intente acceder a una ruta que no esta definida.
+
+Lo que hacemos en este bloque de codigo es inicializar el passport y definir las rutas de autenticación.
+
+
+```
+app.use(passport.initialize());
+app.use(passport.session());
+app.use("/auth", authRoutes);
+
+```
+
 
 
 ## Problemas a los que nos enfrentamos ##
