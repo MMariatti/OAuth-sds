@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 </head>
 
-<body class="bg-secondary">
+<body>
     <script>
         function login_google() {
             window.location.href = "http://localhost:3000/auth/google";
@@ -26,6 +26,10 @@
 
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+        body {
+            background-color: #07253f;
+        }
 
         .google-btn {
             width: 184px;
@@ -71,37 +75,35 @@
         }
     </style>
 
-
-
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10 text-center mb-3">
-                <h2 class="heading-section">Seguridad en el desarrollo de Software</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-7 bg-white rounded-2">
+            <div class="col-md-6 bg-white rounded-2 m-5 p-3 shadow-lg">
                 <div class="wrap">
-                    <div class="text-center">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2OEOUaABjLYvcKQafnxHZwY50cDvnTCiJIw&usqp=CAU"
-                            class="img-fluid" alt="">
+                    <div class="row justify-content-center">
+                        <div class="text-center mb-3">
+                            <h2 class="mt-3">Seguridad en el Desarrollo de Software</h2>
+                        </div>
                     </div>
-                    <div class="p-4 p-md-5">
+                    <div class="d-flex justify-content-center">
+                        <div class=" col-9 shadow">
+                            <img src="https://www.cyberwatching.eu/sites/default/files/hero-bg.jpg" class="img-fluid"
+                                alt="">
+                        </div>
+                    </div>
+
+                    <div class="p-2 p-md-3">
                         <div>
-                            <div class="text-center">
+                            <div class="text-center mt-2">
                                 <h3 class="mb-4">Bienvenidos al foro!</h3>
                             </div>
                             <div class="text-center">
-                                <p>El siguiente sitio es un ejemplo de como implementar OAuth para un inicio de sesion.
-                                </p>
-                                <p>Al final del procedimiento vamos a mostrar los datos que Google nos devuelve de la
-                                    persona logueada.</p>
+                                <h5>El siguiente sitio es un ejemplo de como implementar OAuth para un inicio de sesion.
+                                </h5>
+                                <h6>Al final del procedimiento vamos a mostrar los datos que Google nos devuelve de la
+                                    persona logueada.</h6>
                                 <hr>
                                 <p>Por favor inicia sesion con tu cuenta de google</p>
                             </div>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn"></button>
                         </div>
                         <div class="d-flex justify-content-center">
                             <div class="google-btn" onclick="login_google()">
