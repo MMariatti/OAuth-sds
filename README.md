@@ -12,7 +12,7 @@
 
 1. Clonar el repositorio 
 2. Pararse en la carpeta del proyecto y montar buildear la imagen de docker
-    `docker  build. -t oauth-sds`
+    `docker  build . -t oauth-sds`
 3. Correr la imagen de docker
     `docker run -p 49160:3000 oauth-sds`
 
