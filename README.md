@@ -67,7 +67,7 @@ Es una base de datos NoSQL. En este ejemplo vamos a utilizar MongoDB para almace
 usuarios que se autentican mediante OAuth.
 
 ## Qué es Mongoose? ##
-Es un ORM (Object Relational Mapping) para MongoDB. Nos permite definir modelos de datos
+Es un paquete basado en esquemas para MongoDB. Nos permite definir modelos de datos
 y luego utilizar esos modelos para interactuar con la base de datos.
 En nuestro ejemplo vamos a utilizar Mongoose para definir un modelo de usuario.
 Este modelo solo va a contener los datos que nos proporciona google, como el nombre, el email y el 
